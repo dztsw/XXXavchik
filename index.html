@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="ru">
+<!-- «Продукты» © 2026 dzts_w. Все права защищены. -->
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, viewport-fit=cover">
+  <title>Продукты</title>
+  <meta name="description" content="Меню на неделю под бюджет, рецепты и список покупок">
+  
+  <meta name="theme-color" content="#fbf6f2" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#151110" media="(prefers-color-scheme: dark)">
+  <meta name="color-scheme" content="light dark">
+  
+  <script>try { var t = JSON.parse(localStorage.getItem('prod.theme')); if (t === 'light' || t === 'dark') document.documentElement.dataset.theme = t; } catch (e) {}</script>
+  <link rel="manifest" href="manifest.webmanifest">
+  <link rel="icon" href="icons/icon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" sizes="180x180" href="icons/icon-180.png">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="default">
+  <meta name="apple-mobile-web-app-title" content="Продукты">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <main id="view"></main>
+
+  <nav class="tabbar">
+    <button data-tab="home"><span class="ic"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3.5 10.5 12 3.8l8.5 6.7"/><path d="M5.5 9v10.5a1 1 0 0 0 1 1h3.5v-5.5a2 2 0 0 1 4 0v5.5h3.5a1 1 0 0 0 1-1V9"/></svg></span>Главная</button>
+    <button data-tab="menu"><span class="ic"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3.5" y="5" width="17" height="15.5" rx="3"/><path d="M3.5 10h17M8 3v4M16 3v4"/><path d="M8 14h2M14 14h2M8 17h2" stroke-width="2.2"/></svg></span>Меню</button>
+    <button data-tab="shop"><span class="ic"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5.2 8h13.6l-1.2 10.6a2.2 2.2 0 0 1-2.2 1.9H8.6a2.2 2.2 0 0 1-2.2-1.9Z"/><path d="M9 10.5V7a3 3 0 0 1 6 0v3.5"/></svg></span>Покупки</button>
+    <button data-tab="recipes"><span class="ic"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 6.8C10.2 5.3 7.6 4.7 3.8 4.7v13.8c3.8 0 6.4.6 8.2 2.1 1.8-1.5 4.4-2.1 8.2-2.1V4.7c-3.8 0-6.4.6-8.2 2.1Z"/><path d="M12 6.8v13.8"/></svg></span>Рецепты</button>
+    <button data-tab="prices"><span class="ic"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="8.7"/><path d="M10 17V7.5h3.2a2.6 2.6 0 0 1 0 5.2H8.5M8.5 15h5"/></svg></span>Цены</button>
+    <button data-tab="setup"><span class="ic"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h8.5M17.5 7H20M4 17h2.5M11.5 17H20"/><circle cx="15" cy="7" r="2.5"/><circle cx="9" cy="17" r="2.5"/></svg></span>Анкета</button>
+  </nav>
+
+  <div id="modal" class="modal"><div id="modal-body" class="sheet"></div></div>
+  <div id="toast" class="toast"></div>
+  <div class="rotate"><div><span class="big">📱</span>Поверните телефон вертикально</div></div>
+  
+  <label class="haptic" id="hapticL" aria-hidden="true"><input type="checkbox" switch tabindex="-1"></label>
+  <input type="file" id="importFile" accept=".json,application/json" hidden>
+
+  <script src="data/products.js"></script>
+  <script src="data/recipes.js"></script>
+  <script src="data/recipes-2.js"></script>
+  <script src="data/live-5ka.js"></script>
+  <script src="data/changelog.js"></script>
+  <script src="qol.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
